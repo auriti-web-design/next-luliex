@@ -1,16 +1,16 @@
 'use client'
 import * as z from 'zod'
-import {useForm} from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
-import {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
-import {Textarea} from "@/components/ui/textarea";
-import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
-import {Checkbox} from "@/components/ui/checkbox";
-import {Slider} from "@/components/ui/slider";
-import {useState} from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
 
 const propType = [
     {
@@ -85,8 +85,8 @@ const formSchema = z.object({
         })
 
 }).refine((data) => {
-        return data.password === data.passwordConfirm
-    },
+    return data.password === data.passwordConfirm
+},
     {
         message: "Password do not match",
         path: ["passwordConfirm"]
@@ -113,7 +113,7 @@ export default function Home() {
     const accountType = form.watch("accountType");
 
     const handleSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log({values});
+        console.log({ values });
     }
 
 
@@ -123,12 +123,12 @@ export default function Home() {
         <main className="flex min-h-screen flex-col items-center justify-between p-6 lg:p-24">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSubmit)}
-                      className="max-w-xl w-full flex flex-col gap-4">
+                    className="max-w-xl w-full flex flex-col gap-4">
                     {/* Complete Name */}
                     <FormField
                         control={form.control}
                         name="completeName"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Complete Name</FormLabel>
                                 <FormControl>
@@ -138,15 +138,15 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Company Name */}
                     <FormField
                         control={form.control}
                         name="companyName"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Company Name</FormLabel>
                                 <FormControl>
@@ -156,7 +156,7 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         }}
                     />
@@ -165,7 +165,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="companyAddress"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Company Address</FormLabel>
                                 <FormControl>
@@ -176,15 +176,15 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Company Phone */}
                     <FormField
                         control={form.control}
                         name="companyPhone"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Company Phone</FormLabel>
                                 <FormControl>
@@ -195,16 +195,16 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
 
                     {/*Password */}
                     <FormField
                         control={form.control}
                         name="emailAddress"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Email Address</FormLabel>
                                 <FormControl>
@@ -215,9 +215,9 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Property Type */}
                     <FormField
@@ -233,7 +233,7 @@ export default function Home() {
                                         key={item.id}
                                         control={form.control}
                                         name="propType"
-                                        render={({field}) => {
+                                        render={({ field }) => {
                                             return (
                                                 <FormItem
                                                     key={item.id}
@@ -261,7 +261,7 @@ export default function Home() {
                                         }}
                                     />
                                 ))}
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -270,14 +270,14 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="businessTurnover"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Business Turnover</FormLabel>
                                 <Select onValueChange={field.onChange}>
                                     <FormControl
                                         className="rounded-none">
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Choose your annual turnover"/>
+                                            <SelectValue placeholder="Choose your annual turnover" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -287,7 +287,7 @@ export default function Home() {
                                         <SelectItem value="More 500k">More 500k</SelectItem>
                                     </SelectContent>
                                 </Select>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         }}
                     />
@@ -296,7 +296,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="lanEng"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Do you speak English at the agency?</FormLabel>
                                 <FormControl>
@@ -307,7 +307,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -315,7 +315,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -323,7 +323,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -332,7 +332,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="belongFranchise"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Do you belong to a franchise?</FormLabel>
                                 <FormControl>
@@ -343,7 +343,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -351,7 +351,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -359,7 +359,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -367,7 +367,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="oneMoreLocation"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Do you have one or more locations?</FormLabel>
                                 <FormControl>
@@ -378,7 +378,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -386,7 +386,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -394,7 +394,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -403,14 +403,14 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="teamNumPeople"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>How many people does the team consist of?</FormLabel>
                                 <Select onValueChange={field.onChange}>
                                     <FormControl
                                         className="rounded-none">
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Choose"/>
+                                            <SelectValue placeholder="Choose" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -420,15 +420,15 @@ export default function Home() {
                                         <SelectItem value="More than 10">More than 10</SelectItem>
                                     </SelectContent>
                                 </Select>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Linkedin Or Instagram ProfileURL */}
                     <FormField
                         control={form.control}
                         name="linkedinOrInsLink"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Indicate the Linkedin profile of the agency owner or the agency`&apos;`,s Instagram
                                     profile</FormLabel>
@@ -439,9 +439,9 @@ export default function Home() {
                                         className="rounded-none"
                                     />
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Password */}
                     {/*
@@ -484,7 +484,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="shortDescription"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Short Description</FormLabel>
                                 <FormControl>
@@ -497,22 +497,22 @@ export default function Home() {
                                 <FormDescription>
                                     You can use min. 60 characters and max. 280 characters
                                 </FormDescription>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
-                        }}/>
+                        }} />
 
                     {/* Average property value in your portfolio */}
                     <FormField
                         control={form.control}
                         name="averageValue"
-                        render={({field}) => {
+                        render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Average property value in your portfolio</FormLabel>
                                 <Select onValueChange={field.onChange}>
                                     <FormControl
                                         className="rounded-none">
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Choose your annual turnover"/>
+                                            <SelectValue placeholder="Choose your annual turnover" />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -521,7 +521,7 @@ export default function Home() {
                                         <SelectItem value="More than 5 mln">More than 5 mln</SelectItem>
                                     </SelectContent>
                                 </Select>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         }}
                     />
@@ -530,16 +530,11 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="commissionPercentage"
-                        render={({field: {value, onChange}}) => (
+                        render={({ field: { value, onChange } }) => (
                             <FormItem>
                                 <FormLabel>Price - {value}</FormLabel>
                                 <FormControl>
                                     <Slider
-                                        min={0}
-                                        max={100}
-                                        step={1}
-                                        value={value}
-                                        onValueChange={(newValue) => onChange(newValue)}
                                     />
                                 </FormControl>
                             </FormItem>
@@ -550,11 +545,11 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="commissionPercentage"
-                        render={({field: {value, onChange}}) => (
+                        render={({ field: { value, onChange } }) => (
                             <FormItem>
                                 <FormLabel>Your Logo</FormLabel>
                                 <FormControl>
-                                    <Input id="picture" type="file"/>
+                                    <Input id="picture" type="file" />
                                 </FormControl>
                             </FormItem>
                         )}
@@ -564,11 +559,11 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="teamPhoto"
-                        render={({field: {value, onChange}}) => (
+                        render={({ field: { value, onChange } }) => (
                             <FormItem>
                                 <FormLabel>Photos Team</FormLabel>
                                 <FormControl>
-                                    <Input id="picture" type="file"/>
+                                    <Input id="picture" type="file" />
                                 </FormControl>
                             </FormItem>
                         )}
@@ -578,7 +573,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="moreCompanyTime"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>More than 5 years of real estate agency activity</FormLabel>
                                 <FormControl>
@@ -589,7 +584,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -597,7 +592,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -605,7 +600,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -614,7 +609,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="possVideoCall"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Possibility to meet customers via video call</FormLabel>
                                 <FormControl>
@@ -625,7 +620,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -633,7 +628,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -641,7 +636,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -650,7 +645,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="possBookApp"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Possibility to book a visit to the property directly online through the
                                     LULIEX website</FormLabel>
@@ -662,7 +657,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -670,7 +665,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -678,7 +673,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -687,7 +682,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="moreThan100Prop"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Do you have more than 100 properties in your portfolio?</FormLabel>
                                 <FormControl>
@@ -698,7 +693,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -706,7 +701,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -714,7 +709,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -723,7 +718,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="wtpCont"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Possibility to be contacted by customers on Whatsapp?</FormLabel>
                                 <FormControl>
@@ -734,7 +729,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -742,7 +737,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -750,7 +745,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -760,7 +755,7 @@ export default function Home() {
                     <FormField
                         control={form.control}
                         name="sentRelevantWtp"
-                        render={({field}) => (
+                        render={({ field }) => (
                             <FormItem className="space-y-3">
                                 <FormLabel>Availability to send relevant real estate proposals via Whatsapp,
                                     scrupulously adhering ONLY to the criteria indicated by the user</FormLabel>
@@ -772,7 +767,7 @@ export default function Home() {
                                     >
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="Yes"/>
+                                                <RadioGroupItem value="Yes" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 Yes
@@ -780,7 +775,7 @@ export default function Home() {
                                         </FormItem>
                                         <FormItem className="flex items-center space-x-3 space-y-0">
                                             <FormControl>
-                                                <RadioGroupItem value="No"/>
+                                                <RadioGroupItem value="No" />
                                             </FormControl>
                                             <FormLabel className="font-normal">
                                                 No
@@ -788,7 +783,7 @@ export default function Home() {
                                         </FormItem>
                                     </RadioGroup>
                                 </FormControl>
-                                <FormMessage/>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
