@@ -29,7 +29,7 @@ export default function MainSection() {
                             </p>
 
                             <p className='text-normal lg:text-lg'>
-                                Il nostro obiettivo è quello di mettere in correlazione le più importanti agenzie operanti nel settore dell'immobiliare di lusso nel mondo con coloro che cercano una meravigliosa dimora in cui vivere o una proprietà in cui investire, offrendo la possibilità di relazionarsi con personale altamente qualificato e in grado di soddisfare le richieste di tutti gli stakeholders.
+                                Il nostro obiettivo è quello di mettere in correlazione le più importanti agenzie operanti nel settore dell`&apos;`,immobiliare di lusso nel mondo con coloro che cercano una meravigliosa dimora in cui vivere o una proprietà in cui investire, offrendo la possibilità di relazionarsi con personale altamente qualificato e in grado di soddisfare le richieste di tutti gli stakeholders.
                             </p>
 
                         </div>
