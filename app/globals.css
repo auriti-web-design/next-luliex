@@ -9,6 +9,7 @@
  * Sets base typography styles for paragraphs and headings.
 */
 @import url("https://use.typekit.net/ees4ert.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,21 +88,23 @@
     }
 
     body {
-        @apply bg-background text-foreground forced-color-adjust-auto antialiased;
+        @apply bg-background text-foreground forced-color-adjust-auto antialiased font-active;
     }
 
-    p {
-        @apply font-active
-    }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @apply font-sigurd
     }
 
     .app {
         max-width: 1200px;
         margin: 10rem auto;
-        
+
         background-color: tomato;
     }
 
@@ -133,6 +136,6 @@
         100% {
             transform: translateX(-100%);
         }
-        
+
     }
 }

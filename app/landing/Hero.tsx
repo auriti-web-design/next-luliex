@@ -19,8 +19,8 @@ export default function Hero() {
                 {/* Hero Text **/}
                 <div className='py-2 px-4 lg:px-0 lg:pl-28 flex flex-col gap-4 lg:gap-y-8 lg:gap-x-0 lg:z-10 lg:col-span-1 self-stretch'>
 
-                    <div className="mb-8">
-                        <p className='tracking-wide lg:text-3xl lg:leading-9'>
+                    <div className="mb-0">
+                        <p className='tracking-wide lg:text-2xl lg:leading-9'>
                             Vuoi distinguere i tuoi immobili <br></br>di lusso nel mercato elitario?
                         </p>
                     </div>
@@ -31,8 +31,9 @@ export default function Hero() {
                     </div>
 
                     <div>
-                        <p>Per agenzie d'elite offriamo esposizione esclusiva per immobili di lusso collegandovi con
-                            clienti ad alto profilo. Scoprite il fascino del lusso con noi</p>
+                        <p className="text-xl">
+                            Offriamo ad agenzie altamente selezionate la possibilità di mettersi in contatto con una clientela di alto profilo.
+                        </p>
                     </div>
                     <div className='w-full mt-4'>
                         <button

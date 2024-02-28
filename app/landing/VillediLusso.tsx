@@ -1,29 +1,35 @@
 import React from 'react'
+import style from './style.module.css'
 
-interface BannerProps {
-    images: {
-        src: string;
-        name: string;
-    }[]
-}
 
-export default function VillediLusso({ images }: BannerProps) {
+export default function VillediLusso({ images, speed = 5000 }) {
     return (
         <>
-        <div className='app'>
-            <div className='banner-wrapper '>
+            <div className="inner">
                 <div className="wrapper">
-                    <div className="images">
-                        {images.map(({ src, name }) => (
-                            <div className="image">
-                                <img src={src} alt={name}/>
+                    <section style={{ "--speed": `${speed}ms` }}>
+                        {images.map(({ id, image }) => (
+                            <div className="image" key={id}>
+                                <img src={image} alt={id} />
                             </div>
                         ))}
-                    </div>
+                    </section>
+                    <section style={{ "--speed": `${speed}ms` }}>
+                        {images.map(({ id, image }) => (
+                            <div className="image" key={id}>
+                                <img src={image} alt={id} />
+                            </div>
+                        ))}
+                    </section>
+                    <section style={{ "--speed": `${speed}ms` }}>
+                        {images.map(({ id, image }) => (
+                            <div className="image" key={id}>
+                                <img src={image} alt={id} />
+                            </div>
+                        ))}
+                    </section>
                 </div>
             </div>
-
-        </div>
         </>
     );
 }
