@@ -31,7 +31,7 @@ export default function ImgGrid() {
                                     className='object-cover w-full h-full' />
                             </div>
                             <div className='lg:container absolute z-10 top-0 h-full lg:py-8'>
-                                <h3 className='font-serif lg:text-3xl font-semibold'>
+                                <h3 className='font-serif text-4xl m-4 lg:m-0 font-semibold'>
                                     Ville di Lusso
                                 </h3>
                             </div>
@@ -50,7 +50,7 @@ export default function ImgGrid() {
                             <div
                                 className='lg:container absolute z-10 top-0 h-full lg:py-8'>
                                 <h3
-                                    className='font-serif lg:text-3xl font-semibold'>
+                                    className='font-serif text-4xl m-4 lg:m-0 font-semibold'>
                                     Hotel
                                 </h3>
                             </div>
@@ -66,7 +66,7 @@ export default function ImgGrid() {
                             </div>
                             <div className='lg:container absolute z-10 top-0 h-full lg:py-8'>
                                 <h3
-                                    className='font-serif lg:text-3xl font-semibold w-1/2'
+                                    className='font-serif text-4xl m-4 lg:m-0 font-semibold w-1/2'
                                 >
                                     Catine Vitivinicole
                                 </h3>
@@ -83,7 +83,7 @@ export default function ImgGrid() {
                                     className='object-cover w-full h-full' />
                             </div>
                             <div className='lg:container absolute z-10 top-0 h-full lg:py-8'>
-                                <h3 className='font-serif lg:text-3xl font-semibold'>Resort</h3>
+                                <h3 className='font-serif text-4xl m-4 lg:m-0 font-semibold'>Resort</h3>
                             </div>
                         </div>
                         {/* col-3 */}
@@ -97,7 +97,7 @@ export default function ImgGrid() {
                                     className='object-cover w-full h-full' />
                             </div>
                             <div className='lg:container absolute z-10 top-0 h-full lg:py-8'>
-                                <h3 className='font-serif lg:text-3xl font-semibold w-1/2'>Dimore storiche</h3>
+                                <h3 className='font-serif text-4xl m-4 lg:m-0 font-semibold w-1/2'>Dimore storiche</h3>
                             </div>
                         </div>
 
@@ -110,7 +110,7 @@ export default function ImgGrid() {
                                     className='object-cover object-fille w-full h-full' />
                             </div>
                             <div className='lg:container absolute z-10 top-0 h-full lg:py-8'>
-                                <h3 className='font-serif lg:text-3xl font-semibold'>Chalet</h3>
+                                <h3 className='font-serif text-4xl m-4 lg:m-0 font-semibold'>Chalet</h3>
                             </div>
                         </div>
                     </div>

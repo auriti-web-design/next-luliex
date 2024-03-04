@@ -1,0 +1,36 @@
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+
+// Definizione del modello per la tabella relativa agli utenti
+model User {
+  id                Int      @id @default(autoincrement())
+  completeName      String
+  companyName       String
+  companyAddress    String
+  companyPhone      String
+  emailAddress      String
+  linkedinOrInsLink String
+  shortDescription  String
+  moreCompanyTime   Boolean
+  possVideoCall     Boolean
+  possBookApp       Boolean
+  moreThan100Prop   Boolean
+  wtpCont           Boolean
+  sentRelevantWtp   Boolean
+  propertyDetails   PropertyDetails?
+}
+
+// Definizione del modello per la tabella relativa ai dettagli dell'immobile
+model PropertyDetails {
+  id                Int      @id @default(autoincrement())
+  propType          String
+  businessTurnover  String
+  teamNumPeople     String
+  userId            Int @unique
+  user              User?    @relation(fields: [userId], references: [id])
+}

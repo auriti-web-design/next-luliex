@@ -7,6 +7,7 @@ import MainSection from "@/app/landing/Main";
 import ImgGrid from "@/app/landing/ImgGrid";
 import CTA from "@/app/landing/CTA";
 import VillediLusso from './VillediLusso';
+import Home from '../page';
 
 
 export default function App() {
@@ -29,6 +30,8 @@ export default function App() {
             <CTA/>
             {/* Ville di lusso */}
             <VillediLusso />
+
+            <Home />
         </>
     );
 }
